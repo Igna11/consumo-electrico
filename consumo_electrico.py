@@ -21,57 +21,57 @@ def gasto(consumo, ingreso):
     consumo_mensual = consumo / 2
     if consumo_mensual <= 150:
         cat = "T1-R1"
-        cargo_fijo = 791.27
-        cargo_variable = [67.826, 13.096, 12.219]
-        total = calculadora(consumo_mensual, cargo_fijo, cargo_variable[ingreso], cat)
+        cfijo = 791.27
+        cvariable = [67.826, 13.096, 12.219]
+        total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
     elif 150 < consumo_mensual <= 400:
         cat = "T1-R2"
-        cargo_fijo = 1687.65
-        cargo_variable = [68.128, 13.399, 12.521]
-        total = calculadora(consumo_mensual, cargo_fijo, cargo_variable[ingreso], cat)
+        cfijo = 1687.65
+        cvariable = [68.128, 13.399, 12.521]
+        total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
     elif 401 < consumo_mensual <= 500:
         cat = "T1-R3"
-        cargo_fijo = 5818.97
-        cargo_variable = [73.730, 19, 18.122]
-        total = calculadora(consumo_mensual, cargo_fijo, cargo_variable[ingreso], cat)
+        cfijo = 5818.97
+        cvariable = [73.730, 19, 18.122]
+        total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
     elif 501 < consumo_mensual <= 600:
         cat = "T1-R4"
-        cargo_fijo = 9309.04
-        cargo_variable = [75.552, 20.822, 19.945]
-        total = calculadora(consumo_mensual, cargo_fijo, cargo_variable[ingreso], cat)
+        cfijo = 9309.04
+        cvariable = [75.552, 20.822, 19.945]
+        total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
     elif 601 < consumo_mensual <= 700:
         cat = "T1-R5"
-        cargo_fijo = 24526.03
-        cargo_variable = [79.586, 24.856, 19]
-        total = calculadora(consumo_mensual, cargo_fijo, cargo_variable[ingreso], cat)
+        cfijo = 24526.03
+        cvariable = [79.586, 24.856, 19]
+        total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
     elif 700 < consumo_mensual:  #  <= 800:
         cat = "T1-R6"
-        cargo_fijo = 28923.74
-        cargo_variable = [81.741, 27.011, 26.134]
-        total = calculadora(consumo_mensual, cargo_fijo, cargo_variable[ingreso], cat)
+        cfijo = 28923.74
+        cvariable = [81.741, 27.011, 26.134]
+        total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
     # elif 600 < consumo_mensual <= 700:
     #    cat = "T1-R7"
-    #    cargo_fijo = 5789.72
-    #    cargo_variable = 31.180
-    #    total = calculadora(consumo_mensual, cargo_fijo, cargo_variable, cat)
+    #    cfijo = 5789.72
+    #    cvariable = 31.180
+    #    total = calculadora(consumo_mensual, cfijo, cvariable, cat)
     # elif 700 < consumo_mensual <= 1400:
     #    cat = "T1-R8"
-    #    cargo_fijo = 7479.09
-    #    cargo_variable = 31.493
-    #    total = calculadora(consumo_mensual, cargo_fijo, cargo_variable, cat)
+    #    cfijo = 7479.09
+    #    cvariable = 31.493
+    #    total = calculadora(consumo_mensual, cfijo, cvariable, cat)
     # else:  # consumos superiores a 1400
     #    cat = "T1-R9"
-    #    cargo_fijo = 9690.53
-    #    cargo_variable = 31.830
-    #    total = calculadora(consumo_mensual, cargo_fijo, cargo_variable, cat)
+    #    cfijo = 9690.53
+    #    cvariable = 31.830
+    #    total = calculadora(consumo_mensual, cfijo, cvariable, cat)
 
     return total
 
 
-def calculadora(consumo_mensual, cargo_fijo, cargo_variable, cat):
+def calculadora(consumo_mensual, cfijo, cvariable, cat):
     """Calcula el total a pagar e imprime un mensaje con los detalles"""
     consumo = consumo_mensual
-    neto = consumo * cargo_variable + cargo_fijo
+    neto = consumo * cvariable + cfijo
     iva = 21 * neto / 100
     cont_muni = 6.4240 * neto / 100
     cont_prov = 0.0010 * neto / 100
@@ -84,8 +84,8 @@ def calculadora(consumo_mensual, cargo_fijo, cargo_variable, cat):
     total = neto + impuestos_y_contribuciones
     msj = (
         f"\n\nConsumiste {consumo:.2f}, tu categoria es: {cat}"
-        + f"\n{cat} Cargo fijo: ${cargo_fijo:.2f}"
-        + f"\n{cat} Cargo variable/kWh: ${cargo_variable:.2f} - total: ${cargo_variable*consumo:.2f}"
+        + f"\n{cat} Cargo fijo: ${cfijo:.2f}"
+        + f"\n{cat} Cargo variable/kWh: ${cvariable:.2f} - total: ${cvariable*consumo:.2f}"
         + f"\n\nTotal sin impuestos: ${neto:.2f}"
         + f"\n\niva: ${iva:.2f}"
         + f"\ncontribucion municipal: ${cont_muni:.2f}"
