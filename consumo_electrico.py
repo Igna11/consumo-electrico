@@ -14,9 +14,9 @@ def gasto(consumo, ingreso):
     """
     Se le ingresa la unica variable que es el consumo bimensual
     y calcula el consumo mensual y elije el cuadro tarifario correcto
-    basado en
-    https://www.edenor.com/sites/default/files/2020-07/CuadroTarifario.pdf
-    actualizado 11/04/2024: https://www.edenor.com/consumo
+    basado en:
+    actualizacíon 11/04/2024: https://www.edenor.com/consumo
+    https://www.edenor.com/sites/default/files/inline-images/Cuadro-tarifario-T1R-2024-4.png
     """
     consumo_mensual = consumo / 2
     if consumo_mensual <= 150:
