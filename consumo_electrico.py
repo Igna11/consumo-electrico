@@ -15,39 +15,41 @@ def gasto(consumo, ingreso):
     Se le ingresa la unica variable que es el consumo bimensual
     y calcula el consumo mensual y elije el cuadro tarifario correcto
     basado en:
-    actualizacíon 11/04/2024: https://www.edenor.com/consumo
-    https://www.edenor.com/sites/default/files/inline-images/Cuadro-tarifario-T1R-2024-4.png
+    actualizacíon 25/06/2024: https://www.edenor.com/consumo
+    https://www.edenor.com/sites/default/files/inline-images/Cuadro-tarifario-T1R-2024-4.png -> NO VIGENTE
+    https://www.edenor.com/sites/default/files/inline-images/Cuadro-tarifario-junio-2024-consumo.jpg -> VIGENTE
+    https://www.edenor.com/sites/default/files/2024-06/Cuadro-tarifario-junio-2024.pdf -> VIGENTE
     """
     consumo_mensual = consumo / 2
     if consumo_mensual <= 150:
         cat = "T1-R1"
         cfijo = 791.27
-        cvariable = [67.826, 13.096, 12.219]
+        cvariable = [83.639, 43.158, 31.594]
         total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
     elif 150 < consumo_mensual <= 400:
         cat = "T1-R2"
         cfijo = 1687.65
-        cvariable = [68.128, 13.399, 12.521]
+        cvariable = [83.942, 43.461, 31.897]
         total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
-    elif 401 < consumo_mensual <= 500:
+    elif 400 < consumo_mensual <= 500:
         cat = "T1-R3"
         cfijo = 5818.97
-        cvariable = [73.730, 19, 18.122]
+        cvariable = [89.543, 49.062, 37.498]
         total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
-    elif 501 < consumo_mensual <= 600:
+    elif 500 < consumo_mensual <= 600:
         cat = "T1-R4"
         cfijo = 9309.04
-        cvariable = [75.552, 20.822, 19.945]
+        cvariable = [91.366, 50.885, 39.321]
         total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
-    elif 601 < consumo_mensual <= 700:
+    elif 600 < consumo_mensual <= 700:
         cat = "T1-R5"
         cfijo = 24526.03
-        cvariable = [79.586, 24.856, 19]
+        cvariable = [95.400, 54.919, 43.355]
         total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
     elif 700 < consumo_mensual:  #  <= 800:
         cat = "T1-R6"
         cfijo = 28923.74
-        cvariable = [81.741, 27.011, 26.134]
+        cvariable = [97.544, 57.073, 45.509]
         total = calculadora(consumo_mensual, cfijo, cvariable[ingreso], cat)
     # elif 600 < consumo_mensual <= 700:
     #    cat = "T1-R7"
